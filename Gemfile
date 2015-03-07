@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'oj'
 gem 'bcrypt', '~> 3.1.7'
-gem 'thin'  
+gem 'thin'
 
 gem 'devise'
 
