@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :profiles
   has_many :questions, through: :profiles
+
+  def companies
+    []
+  end
 end

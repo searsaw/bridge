@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :companies
   devise_for :users
 
+  resource :user, only: :show
+
   get '/dashboard', to: 'dashboard#index', as: :dashboard_index
   get '/dashboard/setup', to: 'dashboard#setup', as: :dashboard_setup
   post '/dashboard/setup', to: 'dashboard#setup'
