@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150307125642) do
+ActiveRecord::Schema.define(version: 20150307140237) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -43,12 +43,13 @@ ActiveRecord::Schema.define(version: 20150307125642) do
   add_index "companies", ["unlock_token"], name: "index_companies_on_unlock_token", unique: true, using: :btree
 
   create_table "profiles", id: false, force: :cascade do |t|
-    t.integer  "user_id",     limit: 4, null: false
-    t.integer  "question_id", limit: 4, null: false
-    t.integer  "rank",        limit: 4
-    t.integer  "importance",  limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "user_id",      limit: 4,   null: false
+    t.integer  "question_id",  limit: 4,   null: false
+    t.integer  "rank",         limit: 4
+    t.integer  "importance",   limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "company_name", limit: 255
   end
 
   create_table "questions", force: :cascade do |t|

@@ -10,6 +10,10 @@
 
     <%= form_tag dashboard_setup_path, method: :post do %>
 
+        <div class="form-group">
+          <%= text_field_tag :company_name, '', class: 'form-control', placeholder: 'Current Employer' %>
+        </div>
+
         <% @profiles.each_with_index do |p, i| %>
 
             <div class="row slider">

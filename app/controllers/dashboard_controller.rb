@@ -6,11 +6,13 @@ class DashboardController < ApplicationController
 
   def setup
     if request.post?
+      company_name = params['company_name']
       (0..4).each do |i|
         profile = Profile.new
         profile.question_id = params["profile#{i}"]['question_id']
         profile.rank = params["profile#{i}"]['rank']
         profile.importance= params["profile#{i}"]['importance']
+        profile.company_name = company_name
         current_user.profiles << profile
       end
       redirect_to dashboard_index_path
