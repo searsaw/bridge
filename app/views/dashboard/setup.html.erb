@@ -1,0 +1,23 @@
+<h1>Tell us about your current or last employer.</h1>
+
+<%= form_tag dashboard_setup_path, method: :post do %>
+
+    <% @profiles.each_with_index do |p, i| %>
+
+        <p>Rank</p>
+
+        <p><%= p.question.bottom %> || <%= p.question.top %></p>
+
+        <%= range_field_tag "profile#{i}[rank]", in: 0..99 %>
+
+        <p>Importance</p>
+
+        <%= range_field_tag "profile#{i}[importance]", in: 0..99 %>
+
+        <%= hidden_field_tag "profile#{i}[question_id]", p.question.id %>
+
+    <% end %>
+
+    <%= submit_tag 'Submit' %>
+
+<% end %>

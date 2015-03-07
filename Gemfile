@@ -18,5 +18,6 @@ group :development, :test do
   gem 'better_errors'
   gem 'spring'
   gem 'mailcatcher'
+  gem 'binding_of_caller'
 end
 

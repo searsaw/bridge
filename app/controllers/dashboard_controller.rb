@@ -4,4 +4,24 @@ class DashboardController < ApplicationController
   def index
   end
 
+  def setup
+    if request.post?
+      (0..4).each do |i|
+        profile = Profile.new
+        profile.question_id = params["profile#{i}"]['question_id']
+        profile.rank = params["profile#{i}"]['rank']
+        profile.importance= params["profile#{i}"]['importance']
+        current_user.profiles << profile
+      end
+      redirect_to dashboard_index_path
+    else
+      @profiles = []
+      Question.first(5).each do |q|
+        profile = Profile.new
+        profile.question = q
+        @profiles << profile
+      end
+    end
+  end
+
 end
