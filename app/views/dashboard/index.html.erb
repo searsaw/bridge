@@ -2,7 +2,7 @@
 
 <p>Here are your company recommendations.</p>
 
-<% current_user.companies do |c| %>
+<% current_user.company_matches.each do |c| %>
 
     <p><%= c.name %></p>
 
