@@ -26,3 +26,20 @@
     background: black;
   }
 }
+
+.question-header {
+  color: #555;
+}
+
+.btn.submit {
+  height: 40px;
+  width: 100%;
+  margin: 50px;
+  background-color: rgb(237, 26, 59);
+  border: none;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: white;
+}

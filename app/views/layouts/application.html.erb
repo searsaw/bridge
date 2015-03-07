@@ -14,13 +14,14 @@
 
   <div class="row">
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
         <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-            <li><%= link_to 'Login', new_user_session_path %></li>
-        </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+                <li><%= link_to 'Login', new_user_session_path %></li>
+            </ul>
+          <a class="navbar-brand" href="<%= url_for root_path %>"><%= image_tag 'logo.png', width: 125 %></a>
         </div><!-- /.container-fluid -->
     </nav>
 
@@ -29,6 +30,6 @@
   <%= yield %>
 
 </div>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </body>
 </html>

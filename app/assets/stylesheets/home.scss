@@ -1,6 +1,18 @@
 .navbar {
-  background: none;
+  background: #222;
   border: none;
+
+  li {
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+.navbar-brand img {
+  margin-top: 4px;
+  margin-left: 30px;
+  height: auto;
 }
 
 .callout {
