@@ -1,0 +1,42 @@
+body {
+  background: rgba(0,0,0,.94);
+  font-family: 'Lato', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.navbar {
+  background: none;
+  border: none;
+}
+
+.setup-callout {
+  padding: 4rem 0;
+  text-align: center;
+
+  h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+}
+
+.setup-sliders {
+  h2 {
+    font-weight: 700;
+    text-transform: none;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+  }
+}
+
+.slider {
+  margin-bottom: 70px;
+}
