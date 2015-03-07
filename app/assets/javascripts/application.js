@@ -16,4 +16,5 @@
 //= require Chart.min
 //= require jquery.nstSlider.min
 //= require jquery.diagram
+//= require circle-progress
 //= require_tree .

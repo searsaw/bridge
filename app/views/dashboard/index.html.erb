@@ -9,8 +9,20 @@
     <div class="row company">
 
       <div class="col-md-2 col-md-offset-2 graph">
-        <div class="company_graph" data-percent="<%= ((current_user.total.to_f / c.total) * 100).round %>%"></div>
+        <div class="company_graph circle<%= i %>"></div>
+        <span class="percentage"><%= c.percentage %>%</span>
       </div>
+
+      <script>
+          $('.circle<%= i %>').circleProgress({
+              value: <%= c.percentage / 100.0 %>,
+              size: 190,
+              fill: {
+                  color: 'rgb(237, 26, 59)'
+              },
+              emptyFill: '#444'
+          });
+      </script>
 
       <div class="company-meta col-md-8 <%= (i % 2 == 0) ? 'grey' : 'black' %>">
         <buttton class="pull-right btn btn-default learn-more">Learn more</buttton>
@@ -32,15 +44,3 @@
   </div>
 
 </div>
-
-<script>
-    $('.company_graph').diagram({
-        size: "150", // graph size
-        borderWidth: "20", // border width
-        bgFill: "#95a5a6", // background color
-        frFill: "#ED1A3B", // foreground color
-        textSize: 30, // text color
-        font: "serif", // font
-        textColor: '#fff' // text color
-    });
-</script>

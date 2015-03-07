@@ -1,12 +1,20 @@
 .navbar {
   background: #222;
   border: none;
+  z-index: 999;
 
   li {
     letter-spacing: 2px;
     font-weight: 700;
     text-transform: uppercase;
   }
+}
+
+.navbar.affix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:10;
 }
 
 .navbar-brand img {
@@ -62,4 +70,23 @@
 .big-copy {
   line-height: 1.5em;
   text-align: center;
+}
+
+.comp-description, .big-copy {
+  min-height: 400px;
+}
+
+.comp-description {
+  text-align: center;
+  color: #aaa;
+
+  h2 {
+    font-weight: 600;
+    text-transform: none;
+  }
+
+  h3 {
+    font-weight: 300;
+    text-transform: none;
+  }
 }

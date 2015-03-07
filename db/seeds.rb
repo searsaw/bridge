@@ -17,7 +17,8 @@ Company.delete_all
              zip: Faker::Address.zip_code,
              city: Faker::Address.city,
              state: Faker::Address.state_abbr,
-             co_type: Faker::Company.bs
+             co_type: Faker::Company.bs,
+             percentage: rand(100).floor
   )
   company.skip_confirmation!
   company.save

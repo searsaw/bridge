@@ -9,15 +9,23 @@ class User < ActiveRecord::Base
   has_many :questions, through: :profiles
 
   def company_matches
-    companies = Company.all
-    companies.each do |c|
-      c.total = c.profiles.inject(0) { |sum, p| sum + p.ideal * p.importance }
-    end
+    # companies = Company.all
+    # companies.each do |c|
+    #   c.user_comparison = questions.all.inject(0) do |sum, q|
+    #     user_profile = profiles.find_by question_id: q.id
+    #     comp_profile = c.profiles.find_by question_id: q.id
+    #
+    #     if user_profile && comp_profile
+    #       user_answer = user_profile.ideal * user_profile.importance
+    #       comp_answer = comp_profile.ideal * comp_profile.importance
+    #       sum + (user_answer - comp_answer).abs / 100.0 * 0.2
+    #     else
+    #       0
+    #     end
+    #   end
+    # end
+    # companies.sort { |a, b| a.user_comparison <=> b.user_comparison }
 
-    companies.sort { |a, b| (a.total - total) <=> (b.total - total) }
-  end
-
-  def total
-    @total ||= profiles.inject(0) { |sum, p| sum + p.ideal * p.importance }
+    Company.all.sort { |a,b| b.percentage <=> a.percentage }
   end
 end

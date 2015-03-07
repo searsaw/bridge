@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  attr_accessor :total
+  attr_accessor :user_comparison
   # Include default devise modules. Others available are:
   # :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
