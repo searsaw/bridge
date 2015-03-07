@@ -18,8 +18,12 @@
         <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
             <ul class="nav navbar-nav navbar-right">
-                <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-                <li><%= link_to 'Login', new_user_session_path %></li>
+              <% if user_signed_in? %>
+                  <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                  <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+                  <li><%= link_to 'Login', new_user_session_path %></li>
+              <% end %>
             </ul>
           <a class="navbar-brand" href="<%= url_for root_path %>"><%= image_tag 'logo.png', width: 125 %></a>
         </div><!-- /.container-fluid -->

@@ -52,3 +52,60 @@
 .sign-up-links {
   text-align: center;
 }
+
+.dashboard.callout {
+  border-bottom: 10px solid rgb(237, 26, 59);
+}
+
+.company {
+  padding: 20px 0;
+  color: #fff;
+  margin: 0;
+
+  .company-meta {
+    min-height: 200px;
+
+    h1 {
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      margin-bottom: 5px;
+      color: #000;
+      letter-spacing: 2px;
+    }
+
+    p {
+      color: #000;
+      font-size: 1.5em;
+    }
+
+    .learn-more {
+      margin-top: 25px;
+    }
+  }
+
+  .graph {
+    padding: 0;
+    background: rgba(0,0,0,.94);
+
+    .company_graph {
+      margin-top: 20px;
+
+      span {
+        line-height: 115px !important;
+        font-family: 'Lato', sans-serif !important;
+        font-weight: 300 !important;
+      }
+    }
+  }
+
+  &.row {
+    padding: 0;
+  }
+}
+
+.dashboard.submit {
+  margin-top: 75px;
+}

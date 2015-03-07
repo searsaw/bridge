@@ -8,4 +8,8 @@ class Company < ActiveRecord::Base
 
   has_many :profiles, foreign_key: 'user_id'
   has_many :questions, through: :profiles, foreign_key: 'user_id'
+
+  def location
+    "#{city}, #{state} #{zip[0..4]}"
+  end
 end

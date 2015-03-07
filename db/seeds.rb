@@ -14,7 +14,10 @@ Company.delete_all
              password: password,
              password_confirmation: password,
              name: Faker::Company.name,
-             zip: Faker::Address.zip_code
+             zip: Faker::Address.zip_code,
+             city: Faker::Address.city,
+             state: Faker::Address.state_abbr,
+             co_type: Faker::Company.bs
   )
   company.skip_confirmation!
   company.save
@@ -35,7 +38,7 @@ companies.each do |c|
       importance: importance,
       company_name: '',
       ideal: rank,
-      question_id: q.id
+      question_id: q.id,
     )
 
   end

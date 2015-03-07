@@ -1,9 +1,46 @@
-<p>This is the main dashboard page</p>
+<div class="dashboard callout">
 
-<p>Here are your company recommendations.</p>
+  <h1>Try these on for size.</h1>
 
-<% current_user.company_matches.each do |c| %>
+</div>
 
-    <p><%= c.name %></p>
+<% current_user.company_matches.take(5).each_with_index do |c, i| %>
+
+    <div class="row company">
+
+      <div class="col-md-2 col-md-offset-2 graph">
+        <div class="company_graph" data-percent="<%= ((current_user.total.to_f / c.total) * 100).round %>%"></div>
+      </div>
+
+      <div class="company-meta col-md-8 <%= (i % 2 == 0) ? 'grey' : 'black' %>">
+        <buttton class="pull-right btn btn-default learn-more">Learn more</buttton>
+        <h1><%= c.name %></h1>
+        <h2><%= c.location %></h2>
+        <p><%= c.co_type %></p>
+      </div>
+
+    </div>
 
 <% end %>
+
+<div class="callout">
+
+  <div class="col-md-4 col-md-offset-4">
+
+      <button class="btn btn-default submit dashboard">More, please!</button>
+
+  </div>
+
+</div>
+
+<script>
+    $('.company_graph').diagram({
+        size: "150", // graph size
+        borderWidth: "20", // border width
+        bgFill: "#95a5a6", // background color
+        frFill: "#ED1A3B", // foreground color
+        textSize: 30, // text color
+        font: "serif", // font
+        textColor: '#fff' // text color
+    });
+</script>
