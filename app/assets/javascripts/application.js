@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require Chart.min
+//= require jquery.nstSlider.min
 //= require_tree .

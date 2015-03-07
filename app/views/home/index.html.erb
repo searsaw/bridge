@@ -1,2 +1,71 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="callout home">
+
+  <h1>Tell us about your current or last employer.</h1>
+
+</div>
+
+<div class="row grey-row home">
+
+  <div class="col-md-8 col-md-offset-2">
+
+    <blockquote>Integer laoreet dignissim vulputate. Duis pretium auctor ex, in finibus sem euismod ut. Cras non viverra ante, vitae aliquam felis. Maecenas turpis nisl, sollicitudin eget lacinia dictum, volutpat ut tortor. Cras egestas ut ante id euismod. Ut suscipit et ex a ornare. Aliquam consequat enim sed neque blandit, eget venenatis lectus sollicitudin. Nunc bibendum viverra nisl eget vehicula. Duis non nunc vitae nisl eleifend ornare id a leo. Vestibulum in diam risus.</blockquote>
+
+  </div>
+
+</div>
+
+<div class="row home">
+
+  <div class="col-md-8 col-md-offset-2">
+
+    <canvas id="bar_chart" width="400" height="400"></canvas>
+
+  </div>
+
+</div>
+
+<div class="row grey-row home">
+
+  <div class="col-md-8 col-md-offset-2">
+
+    <h1>Nam sit amet molestie neque. Maecenas volutpat in nibh eget pharetra. Sed venenatis nibh nunc, vitae rhoncus metus porta eget. Sed nec arcu eget tellus fringilla vestibulum egestas vitae diam. Duis congue, lectus vitae placerat consectetur, nulla sapien tempor libero, quis viverra justo dui in purus.</h1>
+
+  </div>
+
+</div>
+
+<div class="row home">
+
+  <div class="col-md-2 col-md-offset-5">
+
+    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-default center-block' %>
+
+  </div>
+
+</div>
+
+<script>
+    var ctx = document.getElementById("bar_chart").getContext("2d");
+    var data = {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+            {
+                label: "My First dataset",
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data: [65, 59, 80, 81, 56, 55, 40]
+            },
+            {
+                label: "My Second dataset",
+                fillColor: "rgba(151,187,205,0.5)",
+                strokeColor: "rgba(151,187,205,0.8)",
+                highlightFill: "rgba(151,187,205,0.75)",
+                highlightStroke: "rgba(151,187,205,1)",
+                data: [28, 48, 40, 19, 86, 27, 90]
+            }
+        ]
+    };
+    var bar_chart = new Chart(ctx).Bar(data);
+</script>

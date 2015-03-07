@@ -1,4 +1,4 @@
-<div class="setup-callout">
+<div class="callout">
 
   <h1>Tell us about your current or last employer.</h1>
 
@@ -12,7 +12,7 @@
 
         <% @profiles.each_with_index do |p, i| %>
 
-            <div class="slider">
+            <div class="row slider">
 
               <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu quam imperdiet, posuere ipsum sit amet, malesuada lectus.</h2>
 
@@ -24,7 +24,17 @@
                 <h3><span class="pull-right"><%= p.question.top %></span></h3>
               </div>
 
-              <%= range_field_tag "profile#{i}[rank]", in: 0..99 %>
+              <div class="col-md-12 slider-widget">
+                <div class="nstSlider" data-range_min="0" data-range_max="100"
+                     data-cur_min="50" data-cur_max="0">
+
+                  <div class="bar"></div>
+                  <div class="leftGrip"></div>
+                </div>
+                <div class="leftLabel"></div>
+
+                <%= hidden_field_tag "profile#{i}[rank]", 0 %>
+              </div>
 
               <div class="col-md-6">
                 <h3>Unimportant</h3>
@@ -34,7 +44,17 @@
                 <h3><span class="pull-right">Important</span></h3>
               </div>
 
-              <%= range_field_tag "profile#{i}[importance]", in: 0..99 %>
+              <div class="col-md-12 slider-widget">
+                <div class="nstSlider" data-range_min="0" data-range_max="100"
+                     data-cur_min="50" data-cur_max="0">
+
+                  <div class="bar"></div>
+                  <div class="leftGrip"></div>
+                </div>
+                <div class="leftLabel"></div>
+
+                <%= hidden_field_tag "profile#{i}[importance]", in: 0..99 %>
+              </div>
 
               <%= hidden_field_tag "profile#{i}[question_id]", p.question.id %>
 
@@ -49,3 +69,20 @@
   </div>
 
 </div>
+
+<script>
+    $('.nstSlider').nstSlider({
+        "left_grip_selector": ".leftGrip",
+        "value_bar_selector": ".bar",
+        "value_changed_callback": function(cause, leftValue, rightValue) {
+            var $container = $(this).parent(),
+                    r = Math.ceil(237 - 37.0 / 100),
+                    g = Math.floor(26 + 1.0 / 100),
+                    b = Math.ceil(59 - 12.0 / 100);
+            $container.find('.leftLabel').text(leftValue);
+            $(this).find('.bar').css('background', 'rgb(' + [r, g, b].join(',') + ')');
+            console.log($container);
+            $container.find('input').val(leftValue);
+        }
+    });
+</script>

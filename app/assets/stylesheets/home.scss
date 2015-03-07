@@ -1,3 +1,34 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar {
+  background: none;
+  border: none;
+}
+
+.callout {
+  padding: 4rem 0;
+  text-align: center;
+
+  h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  &.home {
+
+    h1 {
+      margin-top: 10%;
+    }
+  }
+}
+
+.grey-row {
+  background: rgba(2,2,2,.94);
+}
+
+.home {
+  min-height: 400px;
+
+  blockquote {
+    text-align: center;
+    margin-top: 12%;
+  }
+}
