@@ -12,6 +12,7 @@ class DashboardController < ApplicationController
         profile.question_id = params["profile#{i}"]['question_id']
         profile.rank = params["profile#{i}"]['rank']
         profile.importance= params["profile#{i}"]['importance']
+        profile.ideal= params["profile#{i}"]['ideal']
         profile.company_name = company_name
         current_user.profiles << profile
       end

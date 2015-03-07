@@ -10,24 +10,22 @@
 
     <%= form_tag dashboard_setup_path, method: :post do %>
 
-        <div class="form-group">
-          <%= text_field_tag :company_name, '', class: 'form-control', placeholder: 'Current Employer' %>
+        <div class="col-md-6 col-md-offset-3">
+          <div class="form-group">
+            <%= text_field_tag :company_name, '', class: 'form-control', placeholder: 'Current Employer' %>
+          </div>
         </div>
 
         <% @profiles.each_with_index do |p, i| %>
 
             <div class="row slider">
 
-              <div class="col-md-8 col-md-offset-2 question-header">
-                <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu quam imperdiet, posuere ipsum sit amet, malesuada lectus.</h2>
+              <div class="col-md-10 col-md-offset-1 question-header">
+                <h2><%= p.question.question %></h2>
               </div>
 
-              <div class="col-md-6">
-                <h3><%= p.question.bottom %></h3>
-              </div>
-
-              <div class="col-md-6">
-                <h3><span class="pull-right"><%= p.question.top %></span></h3>
+              <div class="col-md-6 col-md-offset-3 center-align">
+                <h3>Current</h3>
               </div>
 
               <div class="col-md-12 slider-widget">
@@ -37,17 +35,12 @@
                   <div class="bar"></div>
                   <div class="leftGrip"></div>
                 </div>
-                <div class="leftLabel"></div>
 
                 <%= hidden_field_tag "profile#{i}[rank]", 0 %>
               </div>
 
-              <div class="col-md-6">
-                <h3>Unimportant</h3>
-              </div>
-
-              <div class="col-md-6">
-                <h3><span class="pull-right">Important</span></h3>
+              <div class="col-md-6 col-md-offset-3 center-align">
+                <h3>Ideal</h3>
               </div>
 
               <div class="col-md-12 slider-widget">
@@ -57,7 +50,21 @@
                   <div class="bar"></div>
                   <div class="leftGrip"></div>
                 </div>
-                <div class="leftLabel"></div>
+
+                <%= hidden_field_tag "profile#{i}[ideal]", 0 %>
+              </div>
+
+              <div class="col-md-8 col-md-offset-2 center-align">
+                <h3>How important is this to you?</h3>
+              </div>
+
+              <div class="col-md-12 slider-widget">
+                <div class="nstSlider" data-range_min="0" data-range_max="100"
+                     data-cur_min="50" data-cur_max="0">
+
+                  <div class="bar"></div>
+                  <div class="leftGrip"></div>
+                </div>
 
                 <%= hidden_field_tag "profile#{i}[importance]", in: 0..99 %>
               </div>
@@ -68,9 +75,15 @@
 
         <% end %>
 
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-6">
 
-          <%= submit_tag 'Submit', class: 'btn btn-default center-block submit' %>
+          <a href="#" class='btn btn-default center-block submit'>Let's keep going!</a>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <%= submit_tag 'Continue to matches!', class: 'btn btn-default center-block submit' %>
 
         </div>
 

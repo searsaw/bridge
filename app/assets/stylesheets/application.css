@@ -29,3 +29,7 @@ h1,h2,h3,h4,h5,h6 {
     top: 0;          /* to fix the div at the top its containing element */
     right: 0;        /* to fix the div at the right of its containing element */
 }
+
+.center-align {
+    text-align: center;
+}
