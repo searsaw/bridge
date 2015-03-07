@@ -12,6 +12,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'thin'
 
 gem 'devise'
+gem 'faker'
 
 group :development, :test do
   gem 'pry'
