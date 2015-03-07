@@ -79,14 +79,18 @@
 .comp-description {
   text-align: center;
   color: #aaa;
+  margin-top: 100px;
 
   h2 {
     font-weight: 600;
     text-transform: none;
+    line-height: 38px;
   }
 
   h3 {
+    font-size: 22px;
     font-weight: 300;
     text-transform: none;
+    line-height: 28px;
   }
 }
